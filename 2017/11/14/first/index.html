@@ -6,16 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="###共同点：都是保存在浏览器端，且同源的。 ###区别： 1cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递；cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下。存储大小限制也不同，cookie数据不能超过4k，同时因为每次http请求都会携带cookie，所以cookie只适合保存很小的数据，如会话标识。 1而">
+    <meta name="description" content="###共同点：都是保存在浏览器端，且同源的。cookie:临时在浏览中存一些东西       大小：4k       兼容：ie6+       走网络       不安全       有过期时间      主要严重的问题：在服务器环境中，每次发请求，都会伴随着请求一起发送出去。所有才会有了这两个东西的诞生。 localstorage】本地存储 特点： 1、没有过期时间，除非手动删除 2、已域为单">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cookies，sessionStorage和localStorage的区别">
 <meta property="og:url" content="http://yoursite.com/2017/11/14/first/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="###共同点：都是保存在浏览器端，且同源的。 ###区别： 1cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递；cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下。存储大小限制也不同，cookie数据不能超过4k，同时因为每次http请求都会携带cookie，所以cookie只适合保存很小的数据，如会话标识。 1而">
-<meta property="og:updated_time" content="2017-11-14T12:59:34.000Z">
+<meta property="og:description" content="###共同点：都是保存在浏览器端，且同源的。cookie:临时在浏览中存一些东西       大小：4k       兼容：ie6+       走网络       不安全       有过期时间      主要严重的问题：在服务器环境中，每次发请求，都会伴随着请求一起发送出去。所有才会有了这两个东西的诞生。 localstorage】本地存储 特点： 1、没有过期时间，除非手动删除 2、已域为单">
+<meta property="og:updated_time" content="2017-11-14T13:20:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cookies，sessionStorage和localStorage的区别">
-<meta name="twitter:description" content="###共同点：都是保存在浏览器端，且同源的。 ###区别： 1cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递；cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下。存储大小限制也不同，cookie数据不能超过4k，同时因为每次http请求都会携带cookie，所以cookie只适合保存很小的数据，如会话标识。 1而">
+<meta name="twitter:description" content="###共同点：都是保存在浏览器端，且同源的。cookie:临时在浏览中存一些东西       大小：4k       兼容：ie6+       走网络       不安全       有过期时间      主要严重的问题：在服务器环境中，每次发请求，都会伴随着请求一起发送出去。所有才会有了这两个东西的诞生。 localstorage】本地存储 特点： 1、没有过期时间，除非手动删除 2、已域为单">
     
     
         
@@ -163,9 +163,23 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p>###共同点：都是保存在浏览器端，且同源的。</p>
-<p>###区别：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递；cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下。存储大小限制也不同，cookie数据不能超过4k，同时因为每次http请求都会携带cookie，所以cookie只适合保存很小的数据，如会话标识。</span><br></pre></td></tr></table></figure>
+    <p>###共同点：都是保存在浏览器端，且同源的。<br>cookie:临时在浏览中存一些东西<br>       大小：4k<br>       兼容：ie6+<br>       走网络<br>       不安全<br>       有过期时间<br>      主要严重的问题：在服务器环境中，每次发请求，都会伴随着请求一起发送出去。所有才会有了这两个东西的诞生。</p>
+<pre><code>localstorage】本地存储
+特点：
+1、没有过期时间，除非手动删除
+2、已域为单位
+3、不会每次都向服务器请求
+4、大小5M（不要觉得5M小，之前有一个前辈，写了半年的项目，才5M。。）
+5、兼容ie7+。
+6、不走网络
+
+用法：
+取：localStorage.name
+存：localStorage.name=value;
+删除 delete localStorage.name
+删除全部： localStorage.clear()
+</code></pre><p>###区别：</p>
+<p>cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递；cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下。存储大小限制也不同，cookie数据不能超过4k，同时因为每次http请求都会携带cookie，所以cookie只适合保存很小的数据，如会话标识。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">而sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大。</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数据有效期不同，sessionStorage：仅在当前浏览器窗口关闭前有效，自然也就不可能持久保持；localStorage：始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据；cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭。</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">作用域不同，sessionStorage不在不同的浏览器窗口中共享，即使是同一个页面；localStorage 在所有同源窗口中都是共享的；cookie也是在所有同源窗口中都是共享的。Web Storage 支持事件通知机制，可以将数据更新的通知发送给监听者。Web Storage 的 api 接口使用更方便。</span><br></pre></td></tr></table></figure>
