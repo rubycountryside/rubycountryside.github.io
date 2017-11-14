@@ -6,16 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="###cookies，sessionStorage和localStorage的区别共同点：都是保存在浏览器端，且同源的。 区别：cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递；cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下。存储大小限制也不同，cookie数据不能超过4k，同时因为每次http请求都会携带co">
+    <meta name="description" content="cookies，sessionStorage和localStorage的区别共同点：都是保存在浏览器端，且同源的。 区别：cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递；cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下。存储大小限制也不同，cookie数据不能超过4k，同时因为每次http请求都会携带cooki">
 <meta property="og:type" content="article">
-<meta property="og:title" content="H5离线存储，localstorage，sessionstorage使用说明">
+<meta property="og:title" content="cookies，sessionStorage和localStorage的区别">
 <meta property="og:url" content="http://yoursite.com/2017/11/14/first/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="###cookies，sessionStorage和localStorage的区别共同点：都是保存在浏览器端，且同源的。 区别：cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递；cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下。存储大小限制也不同，cookie数据不能超过4k，同时因为每次http请求都会携带co">
-<meta property="og:updated_time" content="2017-11-14T12:41:07.000Z">
+<meta property="og:description" content="cookies，sessionStorage和localStorage的区别共同点：都是保存在浏览器端，且同源的。 区别：cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递；cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下。存储大小限制也不同，cookie数据不能超过4k，同时因为每次http请求都会携带cooki">
+<meta property="og:updated_time" content="2017-11-14T12:44:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="H5离线存储，localstorage，sessionstorage使用说明">
-<meta name="twitter:description" content="###cookies，sessionStorage和localStorage的区别共同点：都是保存在浏览器端，且同源的。 区别：cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递；cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下。存储大小限制也不同，cookie数据不能超过4k，同时因为每次http请求都会携带co">
+<meta name="twitter:title" content="cookies，sessionStorage和localStorage的区别">
+<meta name="twitter:description" content="cookies，sessionStorage和localStorage的区别共同点：都是保存在浏览器端，且同源的。 区别：cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递；cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下。存储大小限制也不同，cookie数据不能超过4k，同时因为每次http请求都会携带cooki">
     
     
         
@@ -35,7 +35,7 @@
         
     
     <!-- title -->
-    <title>H5离线存储，localstorage，sessionstorage使用说明</title>
+    <title>cookies，sessionStorage和localStorage的区别</title>
     <!-- styles -->
     <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
@@ -116,15 +116,15 @@
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2017/11/14/first/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2017/11/14/first/&text=H5离线存储，localstorage，sessionstorage使用说明"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2017/11/14/first/&title=H5离线存储，localstorage，sessionstorage使用说明"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2017/11/14/first/&is_video=false&description=H5离线存储，localstorage，sessionstorage使用说明"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=H5离线存储，localstorage，sessionstorage使用说明&body=Check out this article: http://yoursite.com/2017/11/14/first/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2017/11/14/first/&title=H5离线存储，localstorage，sessionstorage使用说明"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2017/11/14/first/&title=H5离线存储，localstorage，sessionstorage使用说明"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2017/11/14/first/&title=H5离线存储，localstorage，sessionstorage使用说明"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2017/11/14/first/&title=H5离线存储，localstorage，sessionstorage使用说明"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2017/11/14/first/&name=H5离线存储，localstorage，sessionstorage使用说明&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2017/11/14/first/&text=cookies，sessionStorage和localStorage的区别"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2017/11/14/first/&title=cookies，sessionStorage和localStorage的区别"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2017/11/14/first/&is_video=false&description=cookies，sessionStorage和localStorage的区别"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=cookies，sessionStorage和localStorage的区别&body=Check out this article: http://yoursite.com/2017/11/14/first/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2017/11/14/first/&title=cookies，sessionStorage和localStorage的区别"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2017/11/14/first/&title=cookies，sessionStorage和localStorage的区别"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2017/11/14/first/&title=cookies，sessionStorage和localStorage的区别"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2017/11/14/first/&title=cookies，sessionStorage和localStorage的区别"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2017/11/14/first/&name=cookies，sessionStorage和localStorage的区别&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -141,7 +141,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        H5离线存储，localstorage，sessionstorage使用说明
+        cookies，sessionStorage和localStorage的区别
     </h1>
 
 
@@ -163,7 +163,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p>###cookies，sessionStorage和localStorage的区别<br>共同点：都是保存在浏览器端，且同源的。</p>
+    <p>cookies，sessionStorage和localStorage的区别<br>共同点：都是保存在浏览器端，且同源的。</p>
 <p>区别：cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递；cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下。存储大小限制也不同，cookie数据不能超过4k，同时因为每次http请求都会携带cookie，所以cookie只适合保存很小的数据，如会话标识。</p>
 <p>而sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大。</p>
 <p>数据有效期不同，sessionStorage：仅在当前浏览器窗口关闭前有效，自然也就不可能持久保持；localStorage：始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据；cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭。</p>
@@ -200,15 +200,15 @@
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2017/11/14/first/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2017/11/14/first/&text=H5离线存储，localstorage，sessionstorage使用说明"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2017/11/14/first/&title=H5离线存储，localstorage，sessionstorage使用说明"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2017/11/14/first/&is_video=false&description=H5离线存储，localstorage，sessionstorage使用说明"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=H5离线存储，localstorage，sessionstorage使用说明&body=Check out this article: http://yoursite.com/2017/11/14/first/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2017/11/14/first/&title=H5离线存储，localstorage，sessionstorage使用说明"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2017/11/14/first/&title=H5离线存储，localstorage，sessionstorage使用说明"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2017/11/14/first/&title=H5离线存储，localstorage，sessionstorage使用说明"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2017/11/14/first/&title=H5离线存储，localstorage，sessionstorage使用说明"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2017/11/14/first/&name=H5离线存储，localstorage，sessionstorage使用说明&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2017/11/14/first/&text=cookies，sessionStorage和localStorage的区别"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2017/11/14/first/&title=cookies，sessionStorage和localStorage的区别"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2017/11/14/first/&is_video=false&description=cookies，sessionStorage和localStorage的区别"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=cookies，sessionStorage和localStorage的区别&body=Check out this article: http://yoursite.com/2017/11/14/first/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2017/11/14/first/&title=cookies，sessionStorage和localStorage的区别"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2017/11/14/first/&title=cookies，sessionStorage和localStorage的区别"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2017/11/14/first/&title=cookies，sessionStorage和localStorage的区别"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2017/11/14/first/&title=cookies，sessionStorage和localStorage的区别"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2017/11/14/first/&name=cookies，sessionStorage和localStorage的区别&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
