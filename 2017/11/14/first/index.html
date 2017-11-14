@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/11/14/first/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="共同点：都是保存在浏览器端，且同源的。cookie:临时在浏览中存一些东西    大小：4k    兼容：ie6+    走网络    不安全    有过期时间   主要严重的问题：在服务器环境中，每次发请求，都会伴随着请求一起发送出去。所有才会有了这两个东西的诞生。    【localstorage】本地存储   特点：   1、没有过期时间，除非手动删除   2、已域为单位   3、不会每次都">
-<meta property="og:updated_time" content="2017-11-14T13:44:50.000Z">
+<meta property="og:updated_time" content="2017-11-14T13:47:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cookies，sessionStorage和localStorage的区别">
 <meta name="twitter:description" content="共同点：都是保存在浏览器端，且同源的。cookie:临时在浏览中存一些东西    大小：4k    兼容：ie6+    走网络    不安全    有过期时间   主要严重的问题：在服务器环境中，每次发请求，都会伴随着请求一起发送出去。所有才会有了这两个东西的诞生。    【localstorage】本地存储   特点：   1、没有过期时间，除非手动删除   2、已域为单位   3、不会每次都">
@@ -129,7 +129,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#共同点：都是保存在浏览器端，且同源的。"><span class="toc-number">1.</span> <span class="toc-text">共同点：都是保存在浏览器端，且同源的。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#区别"><span class="toc-number">2.</span> <span class="toc-text">区别</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#共同点：都是保存在浏览器端，且同源的。"><span class="toc-number">1.</span> <span class="toc-text">共同点：都是保存在浏览器端，且同源的。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#区别"><span class="toc-number">2.</span> <span class="toc-text">区别</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -163,7 +163,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h2 id="共同点：都是保存在浏览器端，且同源的。"><a href="#共同点：都是保存在浏览器端，且同源的。" class="headerlink" title="共同点：都是保存在浏览器端，且同源的。"></a>共同点：都是保存在浏览器端，且同源的。</h2><pre><code>cookie:临时在浏览中存一些东西
+    <h3 id="共同点：都是保存在浏览器端，且同源的。"><a href="#共同点：都是保存在浏览器端，且同源的。" class="headerlink" title="共同点：都是保存在浏览器端，且同源的。"></a>共同点：都是保存在浏览器端，且同源的。</h3><pre><code>cookie:临时在浏览中存一些东西
    大小：4k
    兼容：ie6+
    走网络
@@ -194,7 +194,7 @@
         delete localStorage[name] //可以用for in 循环 
       }
   localStorage.clear(); //自带的删除全部    
-</code></pre><h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><pre><code>1.  
+</code></pre><h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><pre><code>1.  
     cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递；cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下。存储大小限制也不同，cookie数据不能超过4k，同时因为每次http请求都会携带cookie，所以cookie只适合保存很小的数据，如会话标识。
 2. 
     而sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大。
@@ -228,7 +228,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#共同点：都是保存在浏览器端，且同源的。"><span class="toc-number">1.</span> <span class="toc-text">共同点：都是保存在浏览器端，且同源的。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#区别"><span class="toc-number">2.</span> <span class="toc-text">区别</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#共同点：都是保存在浏览器端，且同源的。"><span class="toc-number">1.</span> <span class="toc-text">共同点：都是保存在浏览器端，且同源的。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#区别"><span class="toc-number">2.</span> <span class="toc-text">区别</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
